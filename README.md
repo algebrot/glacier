@@ -1,2 +1,2 @@
-# glacier-android
+# glacier
 Android app for Glacier National Park.
