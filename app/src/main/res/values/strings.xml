@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">glacier</string>
+    <string name="layer0_url">https://services8.arcgis.com/UT5WPtsyyxzDrV2P/ArcGIS/rest/services/GNP_Fields/FeatureServer/1</string>
+    <string name="layer1_url">https://services8.arcgis.com/UT5WPtsyyxzDrV2P/ArcGIS/rest/services/GNP_Fields/FeatureServer/3</string>
+</resources>
