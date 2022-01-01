@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Get api and license keys
         final String apiKey = "API_KEY";
         final String licenseKey = "LICENSE_KEY";
         final PackageManager pm = getApplicationContext().getPackageManager();
