@@ -2,6 +2,9 @@ package com.example.glacier;
 
 import java.util.Map;
 import java.util.Set;
+import android.content.Context;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -36,9 +39,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final String apiKey = "API_KEY";
+        final String licenseKey = "LICENSE_KEY";
+        final PackageManager pm = getApplicationContext().getPackageManager();
+        ApplicationInfo ai;
+        try {
+            ai = pm.getApplicationInfo(getApplicationContext().getPackageName(), PackageManager.GET_META_DATA);
+        } catch (final PackageManager.NameNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        final Bundle metaData = ai.metaData;
+        String apiValue = metaData.getString(apiKey);
+        String licenseValue = metaData.getString(licenseKey);
+
+        // license with a license string
+        ArcGISRuntimeEnvironment.setLicense(licenseValue);
+
         // authentication with an API key or named user is required to access basemaps and other
         // location services
-        ArcGISRuntimeEnvironment.setApiKey(BuildConfig.API_KEY);
+        ArcGISRuntimeEnvironment.setApiKey(apiValue);
 
         // inflate MapView from layout
         mMapView = findViewById(R.id.mapView);

@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.secrets_gradle_plugin' version '0.4'
 }
 
 android {
@@ -11,7 +12,6 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-        buildConfigField("String", "API_KEY", "\"AAPKe0204edd16e2425f98569a3f3f458693U677rAb2j0k3b6AelyNpwIG1QV8O6HMFHMTqFbA7lV609VmRAoLn2C0rcreBJqu4\"")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
